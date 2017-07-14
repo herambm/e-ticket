@@ -1,0 +1,31 @@
+<!--
+To change this template, choose Tools | Templates
+and open the template in the editor.
+-->
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <title>ETICKETING</title>   
+    <body bgcolor="#F2EBDD" topmargin="0">
+    <table width="100%"><tr><td>
+    <?php
+    require '../include/sqlconn.php';
+$sqlselect="select * from company_info";
+$resultsel = mysql_query($sqlselect);
+
+while ($row =mysql_fetch_assoc($resultsel))
+   {
+     extract($row)  ;
+
+     echo "<font><center><big><b>$name</b></big></center></font>";
+      echo "<font><center>$address</center></font>";
+       echo "<font><center>$email"." , ".$phone."</center></font>";
+   }
+    ?></td><td>
+       
+           </td>
+            </tr></table>
+        
+    </body>
+</html>
